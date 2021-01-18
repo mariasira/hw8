@@ -11,17 +11,21 @@
     <body>
         <div class="d-grid gap-3">
             <div class="p-2 bg-light border">
-                <input type="text" class="form-control" class="p-2 bg-light border" aria-describedby="inputGroup-sizing-default">
+                <input type="text" class="form-control" class="p-2 bg-light border" class="row align-items-center"aria-describedby="inputGroup-sizing-default" id = "newTask">
             </div>
             <div class="p-2 bg-light border"> 
-                <button type="button" class="btn btn-outline-secondary btn-lg" class="p-2 bg-light border">Text</button>
+                <button type="button" class="btn btn-outline-secondary btn-lg" class="p-2 bg-light border" id = "addButton">Add</button>
             </div>
             <div class="p-2 bg-light border">
                 <div class="alert alert-dark" class="p-2 bg-light border" role="alert">
-                Text
+                    <ul class="js-tasks">
+                    </ul>
                 </div>
             </div>
         </div>
+
+        <script src="./index.js"></script>
     </body>
 
 </html>
+
