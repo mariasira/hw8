@@ -1,23 +1,26 @@
 const enteredTask = document.querySelector('#newTask');
 const addButton = document.querySelector('#addButton');
 const tasks = document.querySelector('.js-tasks');
+const firstLi = document.querySelector('.js-firstLi');
 
-const newTask = function(createNewTask ) {
+function onRemoveFirstLi() {
+    firstLi.hidden = true;
+}
+addButton.addEventListener("click", onRemoveFirstLi);
+
+const getNewTaskItem = function(taskName) {
     const listItem = document.createElement("li");
     const label = document.createElement("label");
-    label.innerText = createNewTask ;
+    label.innerText = taskName ;
     listItem.appendChild(label);
     return listItem;
 }
 
-const addTask = function () {
-    if (enteredTask.value == "") {
-        alert("No task to do, enter a task");
-        return;
-    }
-    const listItem = newTask(enteredTask.value);
+const onAddTask = function () {
+   
+    const listItem = getNewTaskItem(enteredTask.value);
     tasks.appendChild(listItem);
     enteredTask.value = "";
 }
 
-addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", onAddTask);
